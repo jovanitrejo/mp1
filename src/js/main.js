@@ -46,3 +46,41 @@ window.addEventListener('scroll', () => {
 
     handleNavbarAtTop(atTop);
 })
+
+const modalTriggers = document.querySelectorAll('.modal[img-src]');
+const overlay = document.getElementById('video-modal-overlay');
+const modalImage = document.getElementById('video-modal-image');
+const closeBtn = document.getElementById('video-modal-close');
+
+function openModal(imgSrc, altText) {
+    modalImage.src = imgSrc;
+    modalImage.alt = altText;
+    overlay.classList.remove('hidden');
+}
+
+function closeModal() {
+    overlay.classList.add('hidden');
+    modalImage.src = "";
+}
+
+modalTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+        const imgSrc = trigger.getAttribute('img-src');
+        const altText = trigger.querySelector('h5')?.textContent ?? "";
+        openModal(imgSrc, altText);
+    });
+});
+
+closeBtn.addEventListener('click', closeModal);
+
+overlay.addEventListener('click', (event) => {
+    if (event.target === overlay) {
+        closeModal();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !overlay.classList.contains('hidden')) {
+        closeModal();
+    }
+});
