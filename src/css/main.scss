@@ -1,4 +1,9 @@
 /* Your SCSS here. */
+$lightStripe: white;
+$lightGreyStripe: rgb(248, 249, 250);
+$defaultTextColor: rgb(125, 125, 125);
+$textHover: rgb(75, 75, 75);
+
 html {
     scroll-behavior: smooth;
 }
@@ -13,7 +18,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgb(248, 249, 250);
+    background-color: $lightGreyStripe;
     height: 40px;
     display: flex;
     justify-content: space-between;
@@ -36,7 +41,7 @@ body {
 
     a {
         text-decoration: none;
-        color: rgb(125, 125, 125);
+        color: $defaultTextColor;
     }
 
     a:last-child {
@@ -48,7 +53,7 @@ body {
     }
 
     a:hover {
-        color: rgb(75, 75, 75);
+        color: $textHover;
     }
 }
 
@@ -65,12 +70,12 @@ body {
 }
 
 .section:nth-child(odd) {
-    background-color: white;
+    background-color: $lightStripe;
     z-index: 1;
 }
 
 .section:nth-child(even) {
-    background-color: rgb(248, 249, 250);
+    background-color: $lightGreyStripe;
     z-index: 1;
 }
 
@@ -85,7 +90,7 @@ body {
 }
 
 #footer {
-    background-color: rgb(248, 249, 250);
+    background-color: $lightGreyStripe;
     height: 50px;
     text-align: center;
     display: flex;
@@ -95,16 +100,16 @@ body {
     gap: 10px;
 
     p {
-        color: rgb(125, 125, 125)
+        color: $defaultTextColor
     }
 
     a {
         text-decoration: none;
-        color: rgb(125, 125, 125);
+        color: $defaultTextColor;
     }
 
     a:hover {
-        color: rgb(75, 75, 75);
+        color: $textHover;
     }
 
     z-index: 99;
@@ -298,7 +303,7 @@ body {
             transition: background-color 0.2s ease-in-out;
 
             &.active {
-                background: rgb(75, 75, 75);
+                background: $textHover;
             }
         }
     }
@@ -306,10 +311,11 @@ body {
 
 #contact {
     display: flex;
-    
+
 }
 
-.left-half, .right-half {
+.left-half,
+.right-half {
     width: 100%;
     display: flex;
     flex-direction: column;
