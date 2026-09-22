@@ -92,9 +92,19 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    gap: 10px;
 
     p {
         color: rgb(125, 125, 125)
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(125, 125, 125);
+    }
+
+    a:hover {
+        color: rgb(75, 75, 75);
     }
 
     z-index: 99;
