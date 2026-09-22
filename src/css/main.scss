@@ -311,7 +311,12 @@ body {
 
 #contact {
     display: flex;
+    flex-direction: row;
 
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 .left-half,
@@ -325,6 +330,9 @@ body {
 
 .left-half {
     font-size: 2rem;
+    @media (max-width: 1024px) {
+        align-items: flex-end;
+    }
 }
 
 #riverwalk {
